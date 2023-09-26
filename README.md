@@ -19,7 +19,7 @@ The next step includes installing necessary CDK and AWS SDK libraries required f
 pip install aws-cdk.core aws-cdk.aws-s3 aws-cdk.aws-lambda aws-cdk.aws-events aws-cdk.aws-events-targets
 ```
 ## Step 3: Define the CDK Stack
-In this, we'll be using Python to define and deploy the stack to AWS.The Python code used to define the stack in this project is included in the `projectcode` file of this repository.
+In this, we'll be using Python to define and deploy the stack to AWS.The code used to define the stack in this project is included in the `CDK-stack` file of this repository.
 In your project directory, open the `serverless_pipeline/serverless_pipeline_stack.py` file and define the stack.
 
 ## Step 4: Create the Lambda function
