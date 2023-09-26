@@ -1,0 +1,43 @@
+from aws_cdk import (
+    core,
+    aws_lambda as _lambda,
+    aws_s3 as s3,
+    aws_events as events,
+    aws_events_targets as targets,
+)
+
+class ServerlessPipelineStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        # Create an S3 bucket
+        bucket = s3.Bucket(
+            self,
+            "MyPipelineBucket",
+            removal_policy=core.RemovalPolicy.DESTROY,
+        )
+
+        # Create a Lambda function
+        lambda_function = _lambda.Function(
+            self,
+            "MyLambdaFunction",
+            runtime=_lambda.Runtime.PYTHON_3_9,
+            handler="lambda.handler",
+            code=_lambda.Code.from_asset("lambda"),
+        )
+
+        # Grant the Lambda function permissions to read from the S3 bucket
+        bucket.grant_read(lambda_function)
+
+        # Create an event rule for S3 bucket changes
+        rule = events.Rule(
+            self,
+            "MyS3EventRule",
+            event_pattern={
+                "source": ["aws.s3"],
+                "eventName": ["ObjectCreated:*"],
+                "resources": [bucket.bucket_arn],
+            },
+        )
+        rule.add_target(targets.LambdaFunction(lambda_function))
