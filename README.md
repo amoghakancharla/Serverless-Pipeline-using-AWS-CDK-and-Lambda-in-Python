@@ -1,6 +1,6 @@
 # Serverless Pipeline using AWS CDK and Lambda in Python
 
-In this project, we will create a serverless pipeline using AWS CDK (Cloud Development Kit) and Lambda in Python. As a part of this, we will create a simple pipeline that triggers a Laambda function when a change 
+In this project, we will create a serverless pipeline using AWS CDK (Cloud Development Kit) and Lambda in Python. As a part of this, we will create a simple pipeline that triggers a Lambda function when a change 
 is made to a specific S3 bucket. For this pipeline, we will use AWS CDK to define and deploy the infrastructure in the form of stacks.
 
 To begin with, make sure you have the AWS CDK installed and configured on your system. Check the `gettingstartedwithcdk.md` file in this repository if you haven't.You'll also need to have Python and Node.js installed. 
