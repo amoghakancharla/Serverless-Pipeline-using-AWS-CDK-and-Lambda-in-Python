@@ -1,6 +1,6 @@
 First, let us understand "How to Get Started with AWS CDK" to work with the current project:
 
-## GETTING STARTED WITH AWS CDK"
+## GETTING STARTED WITH AWS CDK
 CDK (Cloud Development Kit) is a framework for defining cloud infrastructure as code and provisioning it through Cloud Formation templates. You can connect your AWS resources together (even across Stacks) and grant permissions using simple, intent-oriented API's. In short, it is defined as "cloud infrastructure as code", i.e., provisioning cloud infrastructure using programming languages. CDK supports: TypeScript, JavaScript,Python, Java, C#/.Net, and Go languages
 For more information and documentation about CDK, refer to: "https://docs.aws.amazon.com/cdk/v2/guide/home.html"
 
